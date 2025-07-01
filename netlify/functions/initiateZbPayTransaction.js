@@ -59,8 +59,8 @@ exports.handler = async function(event) {
             currencyCode: "840", // USD
             amount: parseFloat(amount).toFixed(2),
             itemName: `School Fees for ${termKey}`,
-            returnUrl: `https://YOUR_NETLIFY_URL/student/payment-status?orderRef=${orderReference}&txId=${newTransaction.id}`,
-            resultUrl: "https://YOUR_NETLIFY_URL/.netlify/functions/zbpayWebhook", // Webhook endpoint
+            returnUrl: `https://mghspayfees.netlify.app/student/payment-status?orderRef=${orderReference}&txId=${newTransaction.id}`,
+            resultUrl: "https://mghspayfees.netlify.app/.netlify/functions/zbpayWebhook", // Webhook endpoint
         };
 
         const zbResponse = await fetch('https://zbnet.zb.co.zw/wallet_sandbox_api/payments/initiate-transaction', {
